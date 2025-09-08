@@ -2,12 +2,12 @@
     <h1>
         ReelFlow - 睿播
     </h1>
-    <img src="image/logo.png" alt="ReelFlow Logo"/>
-    <br />
     <img alt="GitHub License" src="https://img.shields.io/github/license/dingdinglz/ReelFlow">
     <img alt="Frontend" src="https://img.shields.io/badge/Nuxt-4.1-brightgreen?logo=nuxt">
     <img alt="Backend" src="https://img.shields.io/badge/Go-1.23.1-blue?logo=go">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/dingdinglz/ReelFlow">
+    <br />
+    <img src="image/logo.png" alt="ReelFlow Logo"/>
 </div>
 
 ReelFlow - 睿播 是一款面向**多设备、多场景**的智能化多媒体内容发布与管理系统。它旨在解决传统信息展示效率低下、管理困难的痛点。 
