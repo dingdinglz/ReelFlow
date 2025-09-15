@@ -1,0 +1,76 @@
+title: 多设备[智能化]{class="text-primary"}管理多媒体内容
+description: 通过搭建使用ReelFlow，用户可以轻松地将视频、图片轮播、通知等内容，实时、精准地推送到任意数量的终端设备上。此外，ReelFlow还支持定时内容更新、设备通知弹幕等丰富功能，让信息管理和发布变得的高效、安全与便捷。
+navigation: false
+hero:
+  links:
+    - label: 开始使用
+      icon: i-lucide-arrow-right
+      trailing: true
+      to: /login
+      size: xl
+    - label: 在Github上浏览
+      icon: i-simple-icons-github
+      size: xl
+      color: neutral
+      variant: subtle
+      to: https://github.com/dingdinglz/ReelFlow
+      target: _blank
+sections:
+  - title: 设备集群
+    description: ReelFlow支持多设备集群，用户可以轻松将内容推送到任意数量的终端设备上。同时ReelFlow支持设备分组，用户可以将不同的内容推送到不同的设备组中。
+    orientation: horizontal
+    features:
+      - name: Unlimited devices
+        description: 无上限设备管理。广告屏或者闲置安卓设备，轻松全部接入ReelFlow。
+        icon: i-lucide-package
+      - name: Devices group
+        description: 设备分组，一键向不同设备组推送定制化内容。
+        icon: i-lucide-group
+      - name: Muli Assets
+        description: 支持自定义多组素材，用户可以向不同的设备组推送不同的素材内容。
+        icon: i-lucide-image
+  - title: 实时更新
+    description: ReelFlow支持为设备组编排日程，可以高效地定时更新指定的内容。支持提示用户组下线的设备，实时更新轮播内容等等。
+    orientation: horizontal
+    reverse: true
+    features:
+      - name: Time
+        description: 为设备组编排投放内容安排。
+        icon: i-lucide-calendar
+      - name: Update
+        description: 定时更新指定的投放内容。
+        icon: i-lucide-timer
+      - name: Notice
+        description: 设备状态实时提示。
+        icon: i-lucide-bell
+features:
+  title: ReelFlow的优势
+  description: 选择新时代的投放方式，更高效便捷的管理你的所有设备，一次投放，多地生效
+  items:
+    - title: 开源
+      description: ReelFlow开放源代码托管在Github，并承诺永久免费开放。
+      icon: i-lucide-bird
+    - title: 简单易用
+      description: ReelFlow具备完整的使用文档，并提供社区支持，没使用过此类系统的新手也可以轻松上手。
+      icon: i-lucide-lightbulb
+    - title: 多设备
+      description: ReelFlow让你轻松集成多设备，并提供了强大的分组编排功能。
+      icon: i-lucide-group
+    - title: 实时互联
+      description: ReelFlow可以实时查看设备状态，实时同步公告、素材等等。
+      icon: i-lucide-link
+    - title: 可用性验证
+      description: ReelFlow目前为大连理工大学开发区校区创新创业中心提供投放服务，稳定性、可用性得到充分验证。
+      icon: i-lucide-check-circle
+cta:
+  title: 准备好和ReelFlow开启新时代多媒体征程了吗？
+  description: 加入ReelFlow在多设备、多场景下智能化发布与管理多媒体内容
+  links:
+    - label: 开始使用
+      to: '/login'
+      trailingIcon: i-lucide-arrow-right
+    - label: 在Github上浏览
+      to: 'https://github.com/dingdinglz/ReelFlow'
+      target: _blank
+      variant: subtle
+      icon: i-simple-icons-github
