@@ -7,24 +7,17 @@ const {data: page} = await useAsyncData('index', () => queryCollection('index').
 
 <template>
   <div v-if="page">
-    <UPageHero
+    <!-- 浮动英雄区域 -->
+    <div class="hero-section-wrapper">
+      <IndexHeroBackground/>
+      <HeroFloatingSection
         :title="page.title"
         :description="page.description"
         :links="page.hero.links"
-    >
-      <template #top>
-        <IndexHeroBackground/>
-      </template>
+      />
+    </div>
 
-      <template #title>
-        <MDC
-            :value="page.title"
-            unwrap="p"
-        />
-      </template>
-    </UPageHero>
-
-    <UPageSection
+    <FloatingSection
         v-for="(section, index) in page.sections"
         :key="index"
         :title="section.title"
@@ -32,32 +25,51 @@ const {data: page} = await useAsyncData('index', () => queryCollection('index').
         :orientation="section.orientation"
         :reverse="section.reverse"
         :features="section.features"
+        :delay="index * 0.5"
     >
       <ImagePlaceholder/>
-    </UPageSection>
+    </FloatingSection>
 
-    <UPageSection
+    <FloatingSection
         :title="page.features.title"
         :description="page.features.description"
+        :delay="2"
     >
-      <UPageGrid>
-        <UPageCard
-            v-for="(item, index) in page.features.items"
-            :key="index"
-            v-bind="item"
-            spotlight
-        />
-      </UPageGrid>
-    </UPageSection>
+      <FloatingCardGrid :items="page.features.items" />
+    </FloatingSection>
 
     <USeparator/>
 
-    <UPageCTA
+    <FloatingCTA
         v-bind="page.cta"
         variant="naked"
-        class="overflow-hidden"
     >
       <LazyStarsBg/>
-    </UPageCTA>
+    </FloatingCTA>
   </div>
 </template>
+
+<style scoped>
+.hero-section-wrapper {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-section-wrapper :deep(.index-hero-background) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-section-wrapper :deep(.hero-floating-section) {
+  position: relative;
+  z-index: 2;
+}
+</style>
