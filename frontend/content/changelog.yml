@@ -1,0 +1,25 @@
+title: 更新日志
+description: ReelFlow 的版本更新记录
+navigation: true
+items:
+  - version: v0.1.0
+    date: 2025-09-20
+    badge:
+      label: 最新
+      color: primary
+    content: |
+      <ul>
+        <li>初始化项目</li>
+        <li>完成基础架构搭建</li>
+        <li>实现设备管理功能</li>
+        <li>实现素材管理功能</li>
+        <li>实现内容推送功能</li>
+      </ul>
+  - version: v0.0.1
+    date: 2025-09-10
+    content: |
+      <ul>
+        <li>项目立项</li>
+        <li>完成技术选型</li>
+        <li>搭建开发环境</li>
+      </ul>

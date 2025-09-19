@@ -32,6 +32,17 @@ const createImageSchema = () => z.object({
     srcset: z.string().optional()
 })
 
+// 定义 changelog 项的 schema
+const createChangelogItemSchema = () => z.object({
+    version: z.string().nonempty(),
+    date: z.string().nonempty(),
+    badge: z.object({
+        label: z.string().nonempty(),
+        color: colorEnum.optional()
+    }).optional(),
+    content: z.string().nonempty()
+})
+
 export const collections = {
     index: defineCollection({
         source: 'index.yml',
@@ -71,4 +82,11 @@ export const collections = {
             })
         })
     }),
+    changelog: defineCollection({
+        source: 'changelog.yml',
+        type: 'page',
+        schema: z.object({
+            items: z.array(createChangelogItemSchema())
+        })
+    })
 }
