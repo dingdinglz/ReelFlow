@@ -10,6 +10,7 @@ const {data: page} = await useAsyncData('index', () => queryCollection('index').
     <!-- 浮动英雄区域 -->
     <div class="hero-section-wrapper">
       <IndexHeroBackground/>
+      <LazyStarsBg/>
       <HeroFloatingSection
         :title="page.title"
         :description="page.description"
@@ -37,7 +38,7 @@ const {data: page} = await useAsyncData('index', () => queryCollection('index').
     >
       <FloatingCardGrid :items="page.features.items" />
     </FloatingSection>
-
+    
     <USeparator/>
 
     <FloatingCTA
@@ -46,6 +47,9 @@ const {data: page} = await useAsyncData('index', () => queryCollection('index').
     >
       <LazyStarsBg/>
     </FloatingCTA>
+    
+    <!-- 浮动回到顶部按钮 -->
+    <FloatingButton icon="rocket" />
   </div>
 </template>
 

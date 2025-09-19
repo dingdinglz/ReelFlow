@@ -19,6 +19,8 @@
 </template>
 
 <script setup lang="ts">
+
+
 interface CardItem {
   title: string
   description: string
