@@ -1,0 +1,31 @@
+package logic
+
+import (
+	"context"
+
+	"ReelFlow/rpc/user/internal/svc"
+	"ReelFlow/rpc/user/user"
+
+	"github.com/zeromicro/go-zero/core/logx"
+)
+
+type RefreshTokenLogic struct {
+	ctx    context.Context
+	svcCtx *svc.ServiceContext
+	logx.Logger
+}
+
+func NewRefreshTokenLogic(ctx context.Context, svcCtx *svc.ServiceContext) *RefreshTokenLogic {
+	return &RefreshTokenLogic{
+		ctx:    ctx,
+		svcCtx: svcCtx,
+		Logger: logx.WithContext(ctx),
+	}
+}
+
+// 刷新 Token
+func (l *RefreshTokenLogic) RefreshToken(in *user.RefreshTokenReq) (*user.UserLoginResp, error) {
+	// todo: add your logic here and delete this line
+
+	return &user.UserLoginResp{}, nil
+}
