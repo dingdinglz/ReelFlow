@@ -4,3 +4,5 @@ Etcd:
   Hosts:
   - 127.0.0.1:2379
   Key: user.rpc
+
+DataSource: root:@tcp(localhost:3306)/reelflow
