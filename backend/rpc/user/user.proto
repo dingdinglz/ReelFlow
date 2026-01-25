@@ -18,8 +18,7 @@ message UserLoginReq {
 }
 
 message UserLoginResp {
-  string access_token = 1;
-  string refresh_token = 2;
+  bool is_success = 1;
 }
 
 message RefreshTokenReq {}

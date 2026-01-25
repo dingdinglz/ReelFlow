@@ -171,8 +171,7 @@ func (x *UserLoginReq) GetPassword() string {
 
 type UserLoginResp struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	AccessToken   string                 `protobuf:"bytes,1,opt,name=access_token,json=accessToken,proto3" json:"access_token,omitempty"`
-	RefreshToken  string                 `protobuf:"bytes,2,opt,name=refresh_token,json=refreshToken,proto3" json:"refresh_token,omitempty"`
+	IsSuccess     bool                   `protobuf:"varint,1,opt,name=is_success,json=isSuccess,proto3" json:"is_success,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -207,18 +206,11 @@ func (*UserLoginResp) Descriptor() ([]byte, []int) {
 	return file_user_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *UserLoginResp) GetAccessToken() string {
+func (x *UserLoginResp) GetIsSuccess() bool {
 	if x != nil {
-		return x.AccessToken
+		return x.IsSuccess
 	}
-	return ""
-}
-
-func (x *UserLoginResp) GetRefreshToken() string {
-	if x != nil {
-		return x.RefreshToken
-	}
-	return ""
+	return false
 }
 
 type RefreshTokenReq struct {
@@ -271,10 +263,10 @@ const file_user_proto_rawDesc = "" +
 	"is_success\x18\x01 \x01(\bR\tisSuccess\"F\n" +
 	"\fUserLoginReq\x12\x1a\n" +
 	"\busername\x18\x01 \x01(\tR\busername\x12\x1a\n" +
-	"\bpassword\x18\x02 \x01(\tR\bpassword\"W\n" +
-	"\rUserLoginResp\x12!\n" +
-	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
-	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\"\x11\n" +
+	"\bpassword\x18\x02 \x01(\tR\bpassword\".\n" +
+	"\rUserLoginResp\x12\x1d\n" +
+	"\n" +
+	"is_success\x18\x01 \x01(\bR\tisSuccess\"\x11\n" +
 	"\x0fRefreshTokenReq2\xb7\x01\n" +
 	"\x04User\x12=\n" +
 	"\fUserRegister\x12\x15.user.UserRegisterReq\x1a\x16.user.UserRegisterResp\x124\n" +
