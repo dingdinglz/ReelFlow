@@ -1,0 +1,16 @@
+Name: reelflow-api
+Host: 0.0.0.0
+Port: 8888
+
+Auth: 
+  AccessSecret: "your-accesssecret"
+  AccessExpire: 15
+  RefreshExpire: 900
+  RSAPublicKey: "etc/public_key.pem"
+  RSAPrivateKey: "etc/private_key.pem"
+
+User:
+  Etcd:
+    Hosts:
+      - localhost:2379
+    Key: user.rpc

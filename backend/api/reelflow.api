@@ -1,0 +1,57 @@
+syntax = "v1"
+
+info (
+	title:  ReelFlow
+	desc:   none
+	author: "pyke"
+	email:  "pykehuo@gmail.com"
+)
+
+type Message {
+	Code    int    `json:"code"`
+	Message string `json:"message"`
+}
+
+type (
+	UserRegisterReq {
+		Username string `json:"username"`
+		Password string `json:"password"`
+	}
+	UserRegisterResp {
+		Message
+		IsSuccess bool `json:"is_success"`
+	}
+	UserLoginReq {
+		Username string `json:"username"`
+		Password string `json:"password"`
+	}
+	UserLoginResp {
+		Message
+		AccessToken  string `json:"access_token"`
+		RefreshToken string `json:"refresh_token"`
+	}
+	RefreshTokenReq  {}
+)
+
+@server (
+	group:  user
+	prefix: /user
+)
+service reelflow-api {
+	@handler LogupHandler
+	post /logup (UserRegisterReq) returns (UserRegisterResp)
+
+	@handler LoginHandler
+	post /login (UserLoginReq) returns (UserLoginResp)
+}
+
+@server (
+	group:  user
+	prefix: /user
+	jwt:    Auth
+)
+service reelflow-api {
+	@handler RefreshTokenHandler
+	post /refresh_token (RefreshTokenReq) returns (UserLoginResp)
+}
+
