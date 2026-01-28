@@ -6,6 +6,8 @@ Auth:
   AccessSecret: "your-accesssecret"
   AccessExpire: 15
   RefreshExpire: 900
+  RSAPublicKey: "etc/public_key.pem"
+  RSAPrivateKey: "etc/private_key.pem"
 
 User:
   Etcd:

@@ -11,6 +11,8 @@ type Config struct {
 		AccessSecret  string
 		AccessExpire  int64
 		RefreshExpire int64
+		RSAPublicKey  string
+		RSAPrivateKey string
 	}
 	User zrpc.RpcClientConf
 }
