@@ -223,6 +223,7 @@ func (x *UserLoginResp) GetId() int64 {
 
 type RefreshTokenReq struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -257,6 +258,13 @@ func (*RefreshTokenReq) Descriptor() ([]byte, []int) {
 	return file_user_proto_rawDescGZIP(), []int{4}
 }
 
+func (x *RefreshTokenReq) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
 var File_user_proto protoreflect.FileDescriptor
 
 const file_user_proto_rawDesc = "" +
@@ -275,8 +283,9 @@ const file_user_proto_rawDesc = "" +
 	"\rUserLoginResp\x12\x1d\n" +
 	"\n" +
 	"is_success\x18\x01 \x01(\bR\tisSuccess\x12\x0e\n" +
-	"\x02id\x18\x02 \x01(\x03R\x02id\"\x11\n" +
-	"\x0fRefreshTokenReq2\xb7\x01\n" +
+	"\x02id\x18\x02 \x01(\x03R\x02id\"!\n" +
+	"\x0fRefreshTokenReq\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x03R\x02id2\xb7\x01\n" +
 	"\x04User\x12=\n" +
 	"\fUserRegister\x12\x15.user.UserRegisterReq\x1a\x16.user.UserRegisterResp\x124\n" +
 	"\tUserLogin\x12\x12.user.UserLoginReq\x1a\x13.user.UserLoginResp\x12:\n" +

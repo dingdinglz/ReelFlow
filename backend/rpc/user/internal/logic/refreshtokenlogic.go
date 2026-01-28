@@ -25,7 +25,13 @@ func NewRefreshTokenLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Refr
 
 // 刷新 Token
 func (l *RefreshTokenLogic) RefreshToken(in *user.RefreshTokenReq) (*user.UserLoginResp, error) {
-	// todo: add your logic here and delete this line
-
-	return &user.UserLoginResp{}, nil
+	i := in
+	userInModel, err := l.svcCtx.Model.FindOne(l.ctx, i.Id)
+	if err != nil {
+		return nil, err
+	}
+	return &user.UserLoginResp{
+		IsSuccess: true,
+		Id:        userInModel.Id,
+	}, nil
 }

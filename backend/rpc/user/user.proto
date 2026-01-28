@@ -22,7 +22,9 @@ message UserLoginResp {
   int64 id = 2;
 }
 
-message RefreshTokenReq {}
+message RefreshTokenReq {
+  int64 id = 1;
+}
 
 // 
 service User {
