@@ -3,5 +3,6 @@ CREATE TABLE `user` (
     `username` varchar(255) NOT NULL COMMENT 'users name',
     `password` varchar(255) NOT NULL COMMENT 'users password by hash',
     `level` int NOT NULL COMMENT 'users level', 
-    PRIMARY KEY(`id`)
+    PRIMARY KEY(`id`),
+    CONSTRAINT `UC_UserName` UNIQUE (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
