@@ -172,6 +172,7 @@ func (x *UserLoginReq) GetPassword() string {
 type UserLoginResp struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	IsSuccess     bool                   `protobuf:"varint,1,opt,name=is_success,json=isSuccess,proto3" json:"is_success,omitempty"`
+	Id            int64                  `protobuf:"varint,2,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -211,6 +212,13 @@ func (x *UserLoginResp) GetIsSuccess() bool {
 		return x.IsSuccess
 	}
 	return false
+}
+
+func (x *UserLoginResp) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
 }
 
 type RefreshTokenReq struct {
@@ -263,10 +271,11 @@ const file_user_proto_rawDesc = "" +
 	"is_success\x18\x01 \x01(\bR\tisSuccess\"F\n" +
 	"\fUserLoginReq\x12\x1a\n" +
 	"\busername\x18\x01 \x01(\tR\busername\x12\x1a\n" +
-	"\bpassword\x18\x02 \x01(\tR\bpassword\".\n" +
+	"\bpassword\x18\x02 \x01(\tR\bpassword\">\n" +
 	"\rUserLoginResp\x12\x1d\n" +
 	"\n" +
-	"is_success\x18\x01 \x01(\bR\tisSuccess\"\x11\n" +
+	"is_success\x18\x01 \x01(\bR\tisSuccess\x12\x0e\n" +
+	"\x02id\x18\x02 \x01(\x03R\x02id\"\x11\n" +
 	"\x0fRefreshTokenReq2\xb7\x01\n" +
 	"\x04User\x12=\n" +
 	"\fUserRegister\x12\x15.user.UserRegisterReq\x1a\x16.user.UserRegisterResp\x124\n" +

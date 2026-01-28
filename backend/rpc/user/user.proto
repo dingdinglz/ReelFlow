@@ -19,6 +19,7 @@ message UserLoginReq {
 
 message UserLoginResp {
   bool is_success = 1;
+  int64 id = 2;
 }
 
 message RefreshTokenReq {}
